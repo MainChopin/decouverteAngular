@@ -1,0 +1,34 @@
+<section class="py-5"> 
+    <div class="container px-4 px-lg-5 mt-5 flex-column">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 mb-5 justify-content-center ">
+            <div class="box-details-little m-3">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 justify-content-center mb-5 mt-2">
+                    <div class="col-md-10">
+                        <table class="table">
+                            <tr>
+                                <th>Id</th>
+                                <th>Position</th>
+                                <th>Title/Capital</th>
+                                <th>Pays</th>
+                                <th>Info</th>
+                                <th>Habitant</th>
+                                <th>Action</th>                              
+                            </tr>
+                            <tr *ngFor="let marker of markerList">                           
+                                <td>{{ marker.id }}</td>
+                                <td>{{ marker.position }}</td>
+                                <td>{{ marker.title }}</td>
+                                <td>{{ marker.pays }}</td>
+                                <td>{{ marker.info }}</td>
+                                <td>{{ marker.habitant }}</td>                                
+                                <td>
+                                    <a (click)="goToEditMarker(marker)">Edit</a>
+                                    <a (click)="goToRemoveMarker(marker)">Remove</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
