@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Marker } from './marker';
 import { MARKERS } from './mock-marker-list';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MockDataService {
-  public data = MARKERS;
+  private data = MARKERS;
+  marker: Marker;
 
   constructor(){
   }
@@ -14,7 +16,8 @@ export class MockDataService {
     return this.data;
   }
 
-  createData(newData: any) {
+  createData(newData: Marker) { 
+    console.log(newData);
     this.data.push(newData);
   }
 

@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { MockDataService } from '../mock-data-service.service';
-import { MARKERS } from "../mock-marker-list";
 
 @Component({
   selector: 'app-map',
@@ -33,7 +32,7 @@ export class MapComponent implements OnInit{
     minZoom:this.minZoom,
   }
   
-  markers = MARKERS as  any;
+  markers = this.mockDataService.getData() as  any;
   infoContent = ''
 
   ngOnInit() {
@@ -48,6 +47,5 @@ export class MapComponent implements OnInit{
   openInfo(marker: MapMarker, content: string, habitant: string, pays: string, capital: string) {
     this.infoContent = capital + content + pays + " | " + habitant + " d'habitants";
     this.info.open(marker);
-  
   }
 }

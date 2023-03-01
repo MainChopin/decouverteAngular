@@ -9,7 +9,7 @@ import { RemoveMarkerComponent } from './remove-marker/remove-marker.component';
 const routes: Routes = [
   {path: 'edit/list/:id', component: EditMarkerComponent},
   {path: 'remove/list/:id', component: RemoveMarkerComponent},
-  {path: 'create', component: CreateMarkerComponent},
+  {path: 'add/list', component: CreateMarkerComponent},
   { path: 'list' , component: ListMarkerComponent},
   { path: 'map', component: MapComponent},
   { path: '', redirectTo:'map',pathMatch: 'full'}

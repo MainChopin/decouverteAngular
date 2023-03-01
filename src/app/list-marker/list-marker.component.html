@@ -3,11 +3,12 @@
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 mb-5 justify-content-center ">
             <div class="box-details-little m-3">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 justify-content-center mb-5 mt-2">
-                    <div class="col-md-10">
-                        <table class="table">
+                    <div class="col-md-12">
+                        <table class="table">      
                             <tr>
                                 <th>Id</th>
-                                <th>Position</th>
+                                <th>Lat</th>
+                                <th>Lng</th>
                                 <th>Title/Capital</th>
                                 <th>Pays</th>
                                 <th>Info</th>
@@ -16,7 +17,8 @@
                             </tr>
                             <tr *ngFor="let marker of markerList">                           
                                 <td>{{ marker.id }}</td>
-                                <td>{{ marker.position }}</td>
+                                <td>{{ marker.lat }}</td>
+                                <td>{{ marker.lng }}</td>
                                 <td>{{ marker.title }}</td>
                                 <td>{{ marker.pays }}</td>
                                 <td>{{ marker.info }}</td>
@@ -27,6 +29,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <a (click)="goToAddMarker()">Create</a>
                     </div>
                 </div>
             </div>

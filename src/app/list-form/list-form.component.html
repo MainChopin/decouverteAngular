@@ -11,7 +11,7 @@
                             required
                             [(ngModel)]="marker.title"
                             name="title"
-                            #name="ngModel">
+                            #title="ngModel">
                         </div>
 
                         <div class="form-group">
@@ -20,7 +20,23 @@
                             required
                             [(ngModel)]="marker.position"
                             name="position"
-                            #name="ngModel">
+                            #position="ngModel">
+                        </div>
+                        <div class="form-group">
+                            <label for="lat">Lat</label>
+                            <input type="number" class="form-control" id="lat"
+                            required
+                            [(ngModel)]="marker.lat"
+                            name="lat"
+                            #lat="ngModel">
+                        </div>
+                        <div class="form-group">
+                            <label for="lng">Lng</label>
+                            <input type="number" class="form-control" id="lng"
+                            required
+                            [(ngModel)]="marker.lng"
+                            name="lng"
+                            #lng="ngModel">
                         </div>
 
                         <div class="form-group">
@@ -29,7 +45,7 @@
                             required
                             [(ngModel)]="marker.pays"
                             name="pays"
-                            #name="ngModel">
+                            #pays="ngModel">
                         </div>
 
                         <div class="form-group">
@@ -38,7 +54,7 @@
                             required
                             [(ngModel)]="marker.habitant"
                             name="habitant"
-                            #name="ngModel">
+                            #habitant="ngModel">
                         </div>
 
                         <div class="form-group">
@@ -56,4 +72,3 @@
     </div>
 </section>
 </form>
-<form *ngIf="!marker" (ngSubmit)="onSubmit()" #listForm="ngForm">Ancun marker à éditer</form>
