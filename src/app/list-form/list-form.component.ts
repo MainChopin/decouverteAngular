@@ -18,14 +18,13 @@ export class ListFormComponent implements OnInit {
     ){}
     
   ngOnInit(){
-    this.isNewForm = this.router.url.includes('new');
+    this.isNewForm = this.router.url.includes('add');
   }
 
   onSubmit(){
-    if (this.isNewForm) {
-      this.marker.id = this.markerList[this.markerList.length].id + 2;
+    if (this.isNewForm) {  
       this.marker.position = new google.maps.LatLng({lat: this.marker.lat, lng: this.marker.lng});
-      this.mds.createData(this.marker);
+      this.markerList.push(this.marker);
       this.router.navigate(['list']);
     }else{
       this.marker.position = new google.maps.LatLng({lat: this.marker.lat, lng: this.marker.lng});

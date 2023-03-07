@@ -17,7 +17,6 @@ export class MockDataService {
   }
 
   createData(newData: Marker) { 
-    console.log(newData);
     this.data.push(newData);
   }
 
